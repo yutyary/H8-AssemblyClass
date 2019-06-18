@@ -1,0 +1,22 @@
+#include "h8-3052-iodef.h"
+
+void func_1() {
+  
+}
+
+void func_2() {
+  
+}
+
+void func_3() {
+  
+}
+
+void func_4() {
+  
+}
+
+
+void main() {
+
+}
