@@ -24,21 +24,29 @@ int sub_4(int i) {
       j = 100;
     }
   }
+  
   return i;
 }
 
 int sub_5(int i) {
-  int j,k;
-  for(i = 0; i < 10; i++) {
-    for(j = 0; j < 10; j++) {
-    }
+  int j,k = 0;
+  
+  for(i = 0; j < i; i++) {
+    k += j;
   }
+
+  return k;
 }
 
-void main() {
+int main() {
   int i;
-  sub_1();
-  i = sub_2();
   
+  sub_1();
+  sub_2();
+  i = sub_3();
+  i = sub_4(i);
+  i = sub_5(i);
+
+  return i;  
 
 }

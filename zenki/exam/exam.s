@@ -78,33 +78,26 @@ _sub_5:
 	add.w	r3,r7
 	mov.w	r0,@(-2,r6)
 	sub.w	r2,r2
+	mov.w	r2,@(-6,r6)
+	sub.w	r2,r2
 	mov.w	r2,@(-2,r6)
 .L10:
-	mov.w	@(-2,r6),r3
-	mov.w	#9,r2
+	mov.w	@(-4,r6),r3
+	mov.w	@(-2,r6),r2
 	cmp.w	r2,r3
-	ble	.L13
+	blt	.L13
 	bra	.L11
 .L13:
-	sub.w	r2,r2
-	mov.w	r2,@(-4,r6)
-.L14:
-	mov.w	@(-4,r6),r3
-	mov.w	#9,r2
-	cmp.w	r2,r3
-	ble	.L16
-	bra	.L12
-.L16:
+	mov.w	@(-6,r6),r3
 	mov.w	@(-4,r6),r2
-	adds	#1,r2
-	mov.w	r2,@(-4,r6)
-	bra	.L14
-.L12:
+	add.w	r3,r2
+	mov.w	r2,@(-6,r6)
 	mov.w	@(-2,r6),r2
 	adds	#1,r2
 	mov.w	r2,@(-2,r6)
 	bra	.L10
 .L11:
+	mov.w	@(-6,r6),r2
 	mov.w	r2,r0
 	mov.w	#6,r3
 	add.w	r3,r7
@@ -118,8 +111,19 @@ _main:
 	subs	#2,r7
 	jsr	@_sub_1
 	jsr	@_sub_2
+	jsr	@_sub_3
 	mov.w	r0,r2
 	mov.w	r2,@(-2,r6)
+	mov.w	@(-2,r6),r0
+	jsr	@_sub_4
+	mov.w	r0,r2
+	mov.w	r2,@(-2,r6)
+	mov.w	@(-2,r6),r0
+	jsr	@_sub_5
+	mov.w	r0,r2
+	mov.w	r2,@(-2,r6)
+	mov.w	@(-2,r6),r2
+	mov.w	r2,r0
 	adds	#2,r7
 	mov.w	@r7+,r6
 	rts
